@@ -36,6 +36,7 @@ class Test extends ui.TestUI {
         //this.NODE_LEFT.x = (960 - (Laya.Browser.width / Laya.Browser.pixelRatio)) * ratio;
         let halfW = (Laya.Browser.width / Laya.Browser.pixelRatio) * 0.5;
         this.NODE_LEFT.x = 960 - (halfW / ratio);
+        this.NODE_RIGHT.x = - (960 - (halfW / ratio));
 
         //this.NODE_BOTTOM.x = 960 - (halfW / ratio);
         //this.NODE_CENTER.x = 960 * ratio;

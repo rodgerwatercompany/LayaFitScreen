@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":6,
-    "selecteID":13,
+    "selectedBox":21,
+    "selecteID":18,
     "props":{"width":1920,"sceneColor":"#ffffff","height":1080},
     "nodeParent":-1,
     "label":"View",
@@ -60,6 +60,58 @@
                     "isAniNode":true,
                     "hasChild":false,
                     "compId":12,
+                    "child":[
+                        ]
+                }]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":0,"x":0,"var":"NODE_RIGHT"},
+            "nodeParent":1,
+            "label":"Sprite(NODE_RIGHT)",
+            "isOpen":true,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "compId":21,
+            "child":[
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":0,"x":1850,"visible":true,"text":"L1","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":21,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":18,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":540,"x":1850,"visible":true,"text":"L2","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":21,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":19,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":1020,"x":1850,"visible":true,"text":"L3","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":21,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":20,
                     "child":[
                         ]
                 }]
