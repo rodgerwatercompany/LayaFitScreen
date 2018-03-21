@@ -10,7 +10,7 @@ class LayaAir3D {
         Laya3D.init(1920, 1080, true);
 
         //适配模式
-        Laya.stage.scaleMode = Laya.Stage.SCALE_NOBORDER;
+        Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
         Laya.stage.screenMode = Laya.Stage.SCREEN_NONE;
         Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
         Laya.stage.alignV = Laya.Stage.ALIGN_CENTER;
@@ -43,7 +43,7 @@ class LayaAir3D {
         Laya.loader.load([{ url: "res/atlas/comp.atlas", type: Laya.Loader.ATLAS }], Laya.Handler.create(this, this.onLoaded));
     
     
-        Laya.stage.on(Laya.Event.RESIZE,this,this.doResize.bind(this));
+        //Laya.stage.on(Laya.Event.RESIZE,this,this.doResize.bind(this));
     }
     onLoaded(): void {
 
@@ -52,23 +52,23 @@ class LayaAir3D {
         Laya.stage.addChild(testUI);
     }
 
-    doResize () {
+    // doResize () {
         
-        if (this.lastSetScaleMode == true) {
+    //     if (this.lastSetScaleMode == true) {
          
-            this.lastSetScaleMode = false;
-            return;
-        }
+    //         this.lastSetScaleMode = false;
+    //         return;
+    //     }
     
-        if (((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio)) > 1.77) {
+    //     if (((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio)) > 1.77) {
 
-            Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_HEIGHT;
-            this.lastSetScaleMode = true;
-        }else {
+    //         Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_HEIGHT;
+    //         this.lastSetScaleMode = true;
+    //     }else {
             
-            Laya.stage.scaleMode = Laya.Stage.SCALE_NOBORDER;
-            this.lastSetScaleMode = true;
-        }
-    }
+    //         Laya.stage.scaleMode = Laya.Stage.SCALE_NOBORDER;
+    //         this.lastSetScaleMode = true;
+    //     }
+    // }
 }
 new LayaAir3D();
