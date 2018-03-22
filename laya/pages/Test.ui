@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":1,
-    "selecteID":6,
+    "selectedBox":6,
+    "selecteID":36,
     "props":{"width":1920,"sceneColor":"#ffffff","height":1080},
     "nodeParent":-1,
     "label":"View",
@@ -15,7 +15,7 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"visible":true,"var":"NODE_LEFT"},
+            "props":{"x":0,"visible":true,"var":"NODE_LEFT"},
             "nodeParent":1,
             "label":"Sprite(NODE_LEFT)",
             "isOpen":true,
@@ -70,7 +70,7 @@
             "props":{"y":0,"x":0,"var":"NODE_RIGHT"},
             "nodeParent":1,
             "label":"Sprite(NODE_RIGHT)",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
@@ -122,7 +122,7 @@
             "props":{"y":540,"x":960,"var":"NODE_CENTER"},
             "nodeParent":1,
             "label":"Sprite(NODE_CENTER)",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
@@ -140,32 +140,6 @@
                     "compId":10,
                     "child":[
                         ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":416,"x":0,"skin":"comp/image.png","anchorY":0.5,"anchorX":0.5},
-                    "nodeParent":5,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":43,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":-415,"x":0,"skin":"comp/image.png","anchorY":0.5,"anchorX":0.5},
-                    "nodeParent":5,
-                    "label":"Image",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":44,
-                    "child":[
-                        ]
                 }]
         },
         {
@@ -174,7 +148,7 @@
             "props":{"y":0,"x":960,"var":"NODE_BOTTOM"},
             "nodeParent":1,
             "label":"Sprite(NODE_BOTTOM)",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
@@ -183,7 +157,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":830,"x":-75,"skin":"comp/image.png"},
+                    "props":{"y":954,"x":0,"width":150,"skin":"comp/image.png","height":250,"anchorY":0.5,"anchorX":0.5},
                     "nodeParent":6,
                     "label":"Image",
                     "isDirectory":false,
@@ -196,7 +170,7 @@
                 {
                     "x":30,
                     "type":"Label",
-                    "props":{"y":854,"x":-958,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "props":{"y":854,"x":-958,"text":"abcd","fontSize":60,"color":"#ffffff"},
                     "nodeParent":6,
                     "label":"Label",
                     "isDirectory":false,
@@ -209,7 +183,7 @@
                 {
                     "x":30,
                     "type":"Label",
-                    "props":{"y":851,"x":-820,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "props":{"y":851,"x":-820,"text":"efghi","fontSize":60,"color":"#ffffff"},
                     "nodeParent":6,
                     "label":"Label",
                     "isDirectory":false,
@@ -222,7 +196,7 @@
                 {
                     "x":30,
                     "type":"Label",
-                    "props":{"y":851,"x":-681,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "props":{"y":851,"x":-681,"text":"jklmn","fontSize":60,"color":"#ffffff"},
                     "nodeParent":6,
                     "label":"Label",
                     "isDirectory":false,
@@ -235,7 +209,7 @@
                 {
                     "x":30,
                     "type":"Label",
-                    "props":{"y":851,"x":-541,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "props":{"y":851,"x":-541,"text":"opqr","fontSize":60,"color":"#ffffff"},
                     "nodeParent":6,
                     "label":"Label",
                     "isDirectory":false,
@@ -248,13 +222,52 @@
                 {
                     "x":30,
                     "type":"Label",
-                    "props":{"y":851,"x":-405,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "props":{"y":851,"x":-405,"text":"stuv","fontSize":60,"color":"#ffffff"},
                     "nodeParent":6,
                     "label":"Label",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
                     "compId":29,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":851,"x":-289,"text":"wxyz","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":6,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":34,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":851,"x":-151,"text":"label","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":6,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":35,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":851,"x":-17,"text":"123456","fontSize":60,"color":"#ffffff"},
+                    "nodeParent":6,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":36,
                     "child":[
                         ]
                 },
@@ -327,9 +340,9 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":0,"x":-75,"skin":"comp/image.png"},
+                    "props":{"y":0,"x":-75,"skin":"comp/image.png","name":"upImage"},
                     "nodeParent":7,
-                    "label":"Image",
+                    "label":"Image(upImage)",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,

@@ -11,7 +11,7 @@
 			"useBuildInServer": true,
 			"sourceMaps": true,
 			"webRoot": "${workspaceRoot}",
-			"port": 9223,
+			"port": 9224,
 			"fixedPort":false
 		},
 		{

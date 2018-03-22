@@ -22,9 +22,9 @@ var Test = /** @class */ (function (_super) {
     }
     Test.prototype.doResize = function () {
         console.log("--- doResize log start ---");
-        console.log(Laya.Browser.width + "," + Laya.Browser.pixelRatio + "," + Laya.Browser.height);
-        console.log("w " + (Laya.Browser.width / Laya.Browser.pixelRatio) + ",h " + (Laya.Browser.height / Laya.Browser.pixelRatio));
-        //console.log("w/h "  + ((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio)));
+        // console.log(Laya.Browser.width + "," + Laya.Browser.pixelRatio + "," + Laya.Browser.height);
+        // console.log("w " + (Laya.Browser.width / Laya.Browser.pixelRatio) + ",h " + (Laya.Browser.height / Laya.Browser.pixelRatio));
+        // console.log("w/h "  + ((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio)));
         // 紀錄原始位置
         this._recordInitialPosition();
         var aspectRation = ((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio));
@@ -32,20 +32,16 @@ var Test = /** @class */ (function (_super) {
         // Set scale mode to show all or noborder.
         if (aspectRation > 1.78 || aspectRation < 1.32) {
             if (Laya.stage.scaleMode !== 'showall') {
-                Laya.timer.frameOnce(1, this, function () {
-                    console.log("set to showall !");
-                    Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
-                });
+                console.log("set to showall !");
+                Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
             }
             this._resetToPosition();
             return;
         }
         else {
             if (Laya.stage.scaleMode !== 'noborder') {
-                Laya.timer.frameOnce(1, this, function () {
-                    console.log("set to noborder !");
-                    Laya.stage.scaleMode = Laya.Stage.SCALE_NOBORDER;
-                });
+                console.log("set to noborder !");
+                Laya.stage.scaleMode = Laya.Stage.SCALE_NOBORDER;
             }
             this._modifiedForNorborder();
         }
@@ -117,6 +113,7 @@ var Test = /** @class */ (function (_super) {
         var halfW = (Laya.Browser.width / Laya.Browser.pixelRatio) * 0.5;
         // NODE_LEFT
         this.NODE_LEFT.x = 960 - (halfW / ratio);
+        console.log((halfW / ratio));
         console.log("2 NODE_LEFT " + this.NODE_LEFT.x);
         // NODE_RIGHT
         this.NODE_RIGHT.x = -(960 - (halfW / ratio));
@@ -125,11 +122,15 @@ var Test = /** @class */ (function (_super) {
             for (var i = 0; i < parent._childs.length; i++) {
                 var child = parent._childs[i];
                 if (child.x < 0) {
-                    child.x = child.oriX + (960 - (halfW / ratio));
+                    child.x = child.oriX * ratio;
+                    //child.x = child.oriX + (960 - (halfW / ratio));
                 }
                 else if (child.x > 0) {
-                    child.x = child.oriX - (960 - (halfW / ratio));
+                    child.x = child.oriX * ratio;
+                    //child.x = child.oriX - (960 - (halfW / ratio));
                 }
+                // if (child.name == "upImage")
+                //     console.log("upImage oriX " + child.oriX + ",X " + child.x);
             }
         };
         // NODE_CENTER
