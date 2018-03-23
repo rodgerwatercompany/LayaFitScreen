@@ -9,12 +9,12 @@ class Test extends ui.TestUI {
 
         console.log("Test");
         
-        this.doResize();
-        Laya.stage.on(Laya.Event.RESIZE,this,this.doResize.bind(this));
+        this.onResize();
+        Laya.stage.on(Laya.Event.RESIZE,this,this.onResize.bind(this));
 
     }
 
-    doResize () {        
+    onResize () {        
         
         console.log("--- doResize log start ---");
         // console.log(Laya.Browser.width + "," + Laya.Browser.pixelRatio + "," + Laya.Browser.height);
@@ -52,20 +52,20 @@ class Test extends ui.TestUI {
 
     _recordInitialPosition () {
 
-        if (this.NODE_LEFT) {
+        if (typeof(this.NODE_LEFT) !== 'undefined') {
 
             if (this.NODE_LEFT.oriX == null) {
                 this.NODE_LEFT.oriX = this.NODE_LEFT.x;
             }
         }
 
-        if (this.NODE_RIGHT) {
+        if (typeof(this.NODE_RIGHT) !== 'undefined') {
 
             if (this.NODE_RIGHT.oriX == null)
                 this.NODE_RIGHT.oriX = this.NODE_RIGHT.x;
         }
 
-        if (this.NODE_UP) {
+        if (typeof(this.NODE_UP) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_UP._childs.length; i++) {
 
@@ -76,7 +76,7 @@ class Test extends ui.TestUI {
         }
         
 
-        if (this.NODE_CENTER) {
+        if (typeof(this.NODE_CENTER) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_CENTER._childs.length; i++) {
 
@@ -87,7 +87,7 @@ class Test extends ui.TestUI {
         }
 
 
-        if (this.NODE_BOTTOM) {
+        if (typeof(this.NODE_BOTTOM) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_BOTTOM._childs.length; i++) {
 
@@ -101,16 +101,16 @@ class Test extends ui.TestUI {
     _resetToPosition () {
 
         // 回復到原始位置
-        if (this.NODE_LEFT)
+        if (typeof(this.NODE_LEFT) !== 'undefined') 
             this.NODE_LEFT.x = this.NODE_LEFT.oriX;
 
 
         console.log("1 NODE_LEFT " + this.NODE_LEFT.x);
             
-        if (this.NODE_RIGHT)
+        if (typeof(this.NODE_RIGHT) !== 'undefined') 
             this.NODE_RIGHT.x = this.NODE_RIGHT.oriX;
 
-        if (this.NODE_UP) {
+        if (typeof(this.NODE_UP) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_UP._childs.length; i++) {
 
@@ -119,7 +119,7 @@ class Test extends ui.TestUI {
             }
         }
 
-        if (this.NODE_CENTER) {
+        if (typeof(this.NODE_CENTER) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_CENTER._childs.length; i++) {
 
@@ -128,7 +128,7 @@ class Test extends ui.TestUI {
             }
         }
 
-        if (this.NODE_BOTTOM) {
+        if (typeof(this.NODE_BOTTOM) !== 'undefined') {
 
             for (let i = 0; i < this.NODE_BOTTOM._childs.length; i++) {
 
@@ -136,7 +136,7 @@ class Test extends ui.TestUI {
                 child.x = child.oriX;
             }
         }
-    }
+    }    
 
     _modifiedForNorborder () {
         
@@ -163,40 +163,29 @@ class Test extends ui.TestUI {
         // 調整子物件的水平間隔
         let modofiedPosition = function (parent) {
 
+            let aspectRation = ((Laya.Browser.width / Laya.Browser.pixelRatio) / (Laya.Browser.height / Laya.Browser.pixelRatio));
             for (let i = 0; i < parent._childs.length; i++) {
 
                 let child = parent._childs[i];
 
-                if (child.x < 0) {
-
-                    child.x = child.oriX * ratio;
-                    //child.x = child.oriX + (960 - (halfW / ratio));
-                }else if (child.x > 0) {
-
-                    child.x = child.oriX * ratio;
-                    //child.x = child.oriX - (960 - (halfW / ratio));
-                }
-
-                // if (child.name == "upImage")
-                //     console.log("upImage oriX " + child.oriX + ",X " + child.x);
-
+                child.x = child.oriX * (aspectRation / 1.77);
             }
         }
 
         // NODE_CENTER
-        if (this.NODE_CENTER) {
+        if (typeof(this.NODE_CENTER) !== 'undefined') {
 
             modofiedPosition(this.NODE_CENTER);
         }
 
         // NODE_CENTER
-        if (this.NODE_UP) {
+        if (typeof(this.NODE_UP) !== 'undefined') {
 
             modofiedPosition(this.NODE_UP);
         }
 
         // NODE_BOTTOM        
-        if (this.NODE_BOTTOM) {
+        if (typeof(this.NODE_BOTTOM) !== 'undefined') {
             
             modofiedPosition(this.NODE_BOTTOM);
         }
